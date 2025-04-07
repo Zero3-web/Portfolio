@@ -41,3 +41,21 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
     }
 });
+
+// Fade-in effect on scroll with ARIA attributes
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+const handleScroll = () => {
+    fadeInElements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.classList.add('visible');
+            el.setAttribute('aria-hidden', 'false'); // Element is now visible
+        } else {
+            el.setAttribute('aria-hidden', 'true'); // Element is hidden
+        }
+    });
+};
+
+window.addEventListener('scroll', handleScroll);
+handleScroll(); // Trigger on page load

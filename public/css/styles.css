@@ -3,7 +3,7 @@ body {
     background-color: black;
     font-family: Arial, sans-serif;
     color: white;
-    background: radial-gradient(circle, rgb(24, 24, 24) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
+    background: radial-gradient(circle, rgb(228, 71, 4) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
@@ -26,7 +26,7 @@ header {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, rgb(10, 133, 158), rgb(217, 113, 113));
+    background: linear-gradient(90deg, rgb(2, 98, 117), rgb(255, 0, 0));
     -webkit-background-clip: text; /* Clip el fondo al texto */
     -webkit-text-fill-color: transparent; /* Hace el texto transparente para mostrar el fondo */
     font-size: 3rem; /* Ajusta el tamaño del texto */
@@ -64,10 +64,13 @@ header {
     font-size: 6rem; /* Ajusta el tamaño del texto si es necesario */
 }
 
+.hero .cta-button {
+    margin-top: 2rem; /* Incrementar el margen superior para mover el botón más abajo */
+}
 
 .cta-button {
-    margin-top: 1rem;
-    padding: 0.5rem 2rem;
+    margin-top: 3rem;
+    padding: 0.7rem 2rem;
     font-size: 1rem;
     cursor: pointer;
     border: 1px solid #000;
@@ -190,6 +193,17 @@ nav ul li a {
 
 nav ul li a:hover {
     color: rgb(10, 133, 158); /* Highlight color on hover */
+}
+
+a {
+    text-decoration: none;
+    color: rgb(10, 133, 158);
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: white;
+    outline: 2px solid rgb(10, 133, 158); /* Mejora la accesibilidad */
 }
 
 .announcement {
@@ -486,4 +500,15 @@ nav ul li a:hover {
 
 .footer-links a:hover {
     color: white;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

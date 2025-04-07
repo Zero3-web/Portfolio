@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgb(252, 252, 252) 80%, rgb(67, 10, 236) 100%, rgba(229, 255, 0, 0.1) 10%);
+    color: #333;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+h1, h2 {
+    color: #1a1a1a;
+}
+
+a {
+    color: rgb(10, 133, 158);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: rgb(8, 100, 120);
+}
