@@ -1,0 +1,489 @@
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+    background: radial-gradient(circle, rgb(24, 24, 24) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+    justify-content: space-between;
+}
+
+main {
+    flex-grow: 1; /* Allow the main content to grow and push the footer down */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, rgb(10, 133, 158), rgb(217, 113, 113));
+    -webkit-background-clip: text; /* Clip el fondo al texto */
+    -webkit-text-fill-color: transparent; /* Hace el texto transparente para mostrar el fondo */
+    font-size: 3rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Opcional: para un texto más destacado */
+}
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.menu-icons {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 6rem; /* Ajusta el tamaño del texto si es necesario */
+}
+
+
+.cta-button {
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #000;
+    background: transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+.cta-button:hover {
+    background: black;
+    color: white;
+    transform: translateY(-2px) scale(1.05); /* Slight scaling effect */
+    transition: 0.4s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+#typewriter-text {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid black;
+    display: inline-block;
+    animation: typing 3s steps(12, end), blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: black;
+    }
+}
+
+@keyframes gradient-water {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        background: radial-gradient(circle, rgb(217, 113, 113) 0%, rgb(83, 109, 171) 60%, rgba(84, 41, 41, 0.1) 100%);
+    }
+    50% {
+        background: radial-gradient(circle, rgb(113, 217, 113) 0%, rgb(171, 83, 109) 60%, rgba(41, 84, 84, 0.1) 100%);
+    }
+    100% {
+        background: radial-gradient(circle, rgb(113, 113, 217) 0%, rgb(109, 171, 83) 60%, rgba(84, 41, 41, 0.1) 100%);
+    }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+    transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+nav.scrolled {
+    background: radial-gradient(circle, rgb(200, 35, 35) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
+    color: black;
+}
+
+nav .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto; /* Center the links */
+    padding: 0;
+    justify-content: center; /* Ensure links are centered */
+    flex-grow: 1; /* Allow the links to take up available space */
+}
+
+nav ul li {
+    font-size: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: rgb(10, 133, 158); /* Highlight color on hover */
+}
+
+.announcement {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    gap: 10px;
+    z-index: 1000;
+}
+
+.announcement a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.announcement a:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.announcement img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#proyectos {
+    padding: 2rem;
+    background-color: #121212;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* Prevent unintended overflow */
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin: 0 0 1rem;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: rgb(10, 133, 158);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: white;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#sobre-mi {
+    padding: 3rem 2rem;
+    background-color: #f5f5f5;
+    color: #333;
+    text-align: center;
+}
+
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-left {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.about-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-button {
+    display: block;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+    border: 2px solid #333;
+    background: transparent;
+    color: #333;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-button:hover {
+    background: #333;
+    color: #fff;
+}
+
+.about-right {
+    flex: 2;
+    max-width: 600px;
+    text-align: left;
+}
+
+.about-right h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #000;
+}
+
+.about-right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-right ul li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.about-right ul li::before {
+    content: "👉";
+    margin-right: 0.5rem;
+    color: #333;
+}
+
+#contactame {
+    padding: 3rem 2rem;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-container p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #2a2a2a;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: rgb(10, 133, 158);
+}
+
+.contact-button {
+    padding: 0.8rem 2rem;
+    border: none;
+    background: rgb(10, 133, 158);
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+    background: rgb(8, 100, 120);
+}
+
+#footer {
+    background-color: #121212;
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.footer-links li {
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: rgb(10, 133, 158);
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
