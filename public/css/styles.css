@@ -1,8 +1,14 @@
+:root {
+    --primary-color: rgb(10, 133, 158);
+    --secondary-color: rgb(228, 71, 4);
+    --font-family: Arial, sans-serif;
+}
+
 body {
     margin: 0;
     background-color: black;
-    font-family: Arial, sans-serif;
-    color: white;
+    font-family: var(--font-family);
+    color: var(--primary-color);
     background: radial-gradient(circle, rgb(228, 71, 4) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -57,18 +63,19 @@ header {
     justify-content: center;
     height: 100vh; /* Ocupa toda la altura de la ventana */
     text-align: center;
-    margin-top: 2rem; /* Move content down by 2rem */
+    margin-top: 3rem; /* Incrementa el margen superior para bajar todo el contenido */
 }
 
 .hero h1 {
     margin: 0;
     font-size: 6rem; /* Ajusta el tamaño del texto si es necesario */
+    margin-top: 1.5rem; /* Ajusta el margen superior del texto "BENJAMIN BURGA" */
 }
 
 .hero p {
     font-size: 2rem; /* Adjusted font size */
     font-weight: 600;
-    margin-top: 1rem; /* Add spacing above the text */
+    margin-top: 1rem; /* Ajusta el margen superior del texto "FRONT END DEVELOPER" */
     background: linear-gradient(90deg, rgb(36, 31, 30), rgb(12, 67, 102));
     -webkit-background-clip: text; /* Clip el fondo al texto */
     -webkit-text-fill-color: transparent; /* Hace el texto transparente para mostrar el fondo */
@@ -77,14 +84,21 @@ header {
 }
 
 .hero .cta-button {
-    margin-top: 2rem; /* Incrementar el margen superior para mover el botón más abajo */
+    margin-top: 3.5rem; /* Incrementa el margen superior del botón "DESCARGAR CV" */
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #000;
+    background: transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
 .hero-stats {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 1rem;
+    margin-top: 2rem; /* Ajusta el margen superior de las estadísticas */
     flex-wrap: wrap;
 }
 
@@ -108,7 +122,7 @@ header {
 }
 
 .cta-button {
-    margin-top: 3rem;
+    margin-top: 4rem; /* Incrementa el margen superior para bajarlo más */
     padding: 0.7rem 2rem;
     font-size: 1rem;
     cursor: pointer;
@@ -236,24 +250,13 @@ nav ul li a:hover {
 
 a {
     text-decoration: none;
-    color: rgb(10, 133, 158);
+    color: var(--primary-color);
     transition: color 0.3s ease;
 }
 
 a:hover, a:focus {
     color: white;
-    outline: 2px solid rgb(10, 133, 158); /* Mejora la accesibilidad */
-}
-
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 5px;
-    background: linear-gradient(90deg, rgb(2, 98, 117), rgb(255, 0, 0));
-    z-index: 1000;
-    transition: width 0.2s ease-out;
+    outline: 2px solid var(--primary-color); /* Mejora la accesibilidad */
 }
 
 .announcement {
@@ -338,7 +341,7 @@ a:hover, a:focus {
     padding: 0.5rem 1rem;
     margin: 0 0.5rem;
     border: none;
-    background: rgb(10, 133, 158);
+    background: var(--primary-color);
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -396,7 +399,7 @@ a:hover, a:focus {
 .carousel-info a {
     margin: 0 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgb(10, 133, 158);
+    background: var(--primary-color);
     color: white;
     border-radius: 5px;
     text-decoration: none;
@@ -471,7 +474,7 @@ a:hover, a:focus {
     display: inline-block;
     margin: 0.5rem 0.25rem;
     padding: 0.3rem 0.6rem;
-    background: rgb(10, 133, 158);
+    background: var(--primary-color);
     color: white;
     border-radius: 3px;
     font-size: 0.8rem;
@@ -489,7 +492,7 @@ a:hover, a:focus {
 
 .project-technologies li {
     background: rgba(10, 133, 158, 0.1);
-    color: rgb(10, 133, 158);
+    color: var(--primary-color);
     padding: 0.2rem 0.5rem;
     border-radius: 5px;
     font-size: 0.8rem; /* Smaller font size for tags */
@@ -505,7 +508,7 @@ a:hover, a:focus {
 .project-buttons a {
     padding: 0.5rem 1rem;
     border: none;
-    background: rgb(10, 133, 158);
+    background: var(--primary-color);
     color: white;
     border-radius: 5px;
     text-decoration: none;
@@ -518,7 +521,7 @@ a:hover, a:focus {
 
 .project-card a {
     text-decoration: none;
-    color: rgb(10, 133, 158);
+    color: var(--primary-color);
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -637,25 +640,13 @@ a:hover, a:focus {
 
 .about-left h3 {
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-title {
+    font-size: 1rem;
+    color: #666;
     margin-bottom: 1rem;
-}
-
-.about-button {
-    display: block;
-    margin: 0.5rem auto;
-    padding: 0.5rem 1rem;
-    border: 2px solid #333;
-    background: transparent;
-    color: #333;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.about-button:hover {
-    background: #333;
-    color: #fff;
 }
 
 .about-right {
@@ -670,49 +661,46 @@ a:hover, a:focus {
     color: #000;
 }
 
-.about-right ul {
-    list-style: none;
-    padding: 0;
+.about-right p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
-.about-right ul li {
+.about-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-list li {
     font-size: 1rem;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
 }
 
-.about-right ul li::before {
-    content: "👉";
+.about-list li::before {
+    content: "✔";
     margin-right: 0.5rem;
-    color: #333;
-}
-
-.about-stats {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.stat {
-    text-align: center;
-    flex: 1;
-    min-width: 80px; /* Adjusted for better alignment */
-}
-
-.stat h3 {
-    font-size: 1.8rem; /* Slightly smaller font size */
-    color: rgb(10, 133, 158);
-    margin: 0;
+    color: #10a37f;
     font-weight: bold;
 }
 
-.stat p {
-    font-size: 0.9rem; /* Adjusted font size */
-    color: #333;
-    margin: 0.3rem 0 0;
+.about-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.7rem 1.5rem;
+    background-color: #10a37f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.about-button:hover {
+    background-color: #0e8c6b;
 }
 
 #contactame {
@@ -758,13 +746,13 @@ a:hover, a:focus {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: rgb(10, 133, 158);
+    border-color: var(--primary-color);
 }
 
 .contact-button {
     padding: 0.8rem 2rem;
     border: none;
-    background: radial-gradient(circle, rgb(228, 71, 4) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
+    background: radial-gradient(circle, var(--secondary-color) 10%, var(--primary-color) 100%, rgba(229, 255, 0, 0.1) 10%);
     color: white;
     font-size: 1rem;
     border-radius: 5px;
@@ -809,7 +797,7 @@ a:hover, a:focus {
 
 .footer-links a {
     text-decoration: none;
-    color: rgb(10, 133, 158);
+    color: var(--primary-color);
     transition: color 0.3s ease;
 }
 
@@ -826,6 +814,38 @@ a:hover, a:focus {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+#testimonials {
+    padding: 2rem;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.testimonial h4 {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -893,5 +913,22 @@ a:hover, a:focus {
     .footer-links {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .testimonial {
+        padding: 0.5rem;
+    }
+
+    .testimonial p {
+        font-size: 0.8rem;
+    }
+
+    .testimonial h4 {
+        font-size: 0.8rem;
     }
 }

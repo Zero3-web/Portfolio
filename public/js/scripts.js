@@ -2,29 +2,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
     const submitButton = form.querySelector('button[type="submit"]');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Validación básica
-        const name = form.name.value.trim();
-        const email = form.email.value.trim();
-        const message = form.message.value.trim();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
 
-        if (!name || !email || !message) {
-            alert('Por favor, completa todos los campos.');
-            return;
+        try {
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    service_id: 'your_service_id',
+                    template_id: 'your_template_id',
+                    user_id: 'your_user_id',
+                    template_params: data,
+                }),
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                form.reset();
+            } else {
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
         }
-
-        // Mostrar spinner de carga
-        submitButton.disabled = true;
-        submitButton.textContent = 'Enviando...';
-
-        setTimeout(() => {
-            alert('¡Gracias por tu mensaje!');
-            form.reset();
-            submitButton.disabled = false;
-            submitButton.textContent = 'Enviar';
-        }, 2000); // Simular un retraso de envío
     });
 
     // Example: Dynamically load projects with alt attributes for images
@@ -51,11 +56,4 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.error('Element with id "current-year" not found.');
     }
-});
-
-window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY; // Distancia desplazada desde la parte superior
-    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Altura total desplazable
-    const scrollPercent = (scrollTop / docHeight) * 100; // Porcentaje de desplazamiento
-    document.getElementById('progress-bar').style.width = `${scrollPercent}%`; // Actualiza el ancho de la barra
 });
