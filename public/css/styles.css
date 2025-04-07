@@ -66,8 +66,13 @@ header {
 }
 
 .hero p {
-    font-size: 1.5rem; /* Adjusted font size */
+    font-size: 2rem; /* Adjusted font size */
+    font-weight: 600;
     margin-top: 1rem; /* Add spacing above the text */
+    background: linear-gradient(90deg, rgb(36, 31, 30), rgb(12, 67, 102));
+    -webkit-background-clip: text; /* Clip el fondo al texto */
+    -webkit-text-fill-color: transparent; /* Hace el texto transparente para mostrar el fondo */
+
     
 }
 
@@ -238,6 +243,17 @@ a {
 a:hover, a:focus {
     color: white;
     outline: 2px solid rgb(10, 133, 158); /* Mejora la accesibilidad */
+}
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(90deg, rgb(2, 98, 117), rgb(255, 0, 0));
+    z-index: 1000;
+    transition: width 0.2s ease-out;
 }
 
 .announcement {

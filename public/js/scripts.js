@@ -52,3 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Element with id "current-year" not found.');
     }
 });
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY; // Distancia desplazada desde la parte superior
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Altura total desplazable
+    const scrollPercent = (scrollTop / docHeight) * 100; // Porcentaje de desplazamiento
+    document.getElementById('progress-bar').style.width = `${scrollPercent}%`; // Actualiza el ancho de la barra
+});
