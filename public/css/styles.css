@@ -237,12 +237,50 @@ a:hover, a:focus {
     object-fit: contain;
 }
 
+.announcement a.github-icon,
+.announcement a.linkedin-icon {
+    display: inline-block;
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%; /* Make icons circular */
+}
+
+.announcement a.github-icon {
+    background-image: url('../images/github-icon.png'); /* Path to GitHub icon */
+}
+
+.announcement a.linkedin-icon {
+    background-image: url('../images/linkedin-icon.png'); /* Path to LinkedIn icon */
+}
+
 #proyectos {
     padding: 2rem;
     background-color: #121212;
     color: white;
     text-align: center;
     overflow: hidden; /* Prevent unintended overflow */
+}
+
+.project-filters {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    border: none;
+    background: rgb(10, 133, 158);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.filter-button:hover {
+    background: rgb(8, 100, 120);
 }
 
 .projects-container {
@@ -254,11 +292,85 @@ a:hover, a:focus {
     overflow: auto; /* Allow scrolling if content overflows */
 }
 
+.projects-carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+.carousel-item {
+    flex: 0 0 80%;
+    margin: 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-info {
+    margin-top: 1rem;
+}
+
+.carousel-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-info p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-info a {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgb(10, 133, 158);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.carousel-info a:hover {
+    background: rgb(8, 100, 120);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
 .project-card {
     background: rgba(255, 255, 255, 0.1);
     padding: 1rem;
     border-radius: 8px;
     width: 300px;
+    flex-shrink: 0;
+    overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -266,6 +378,12 @@ a:hover, a:focus {
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }
 
 .project-card h3 {
@@ -276,6 +394,42 @@ a:hover, a:focus {
 .project-card p {
     font-size: 1rem;
     margin: 0 0 1rem;
+}
+
+.project-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.project-tag {
+    display: inline-block;
+    margin: 0.5rem 0.25rem;
+    padding: 0.3rem 0.6rem;
+    background: rgb(10, 133, 158);
+    color: white;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.project-buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.project-buttons a {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: rgb(10, 133, 158);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.project-buttons a:hover {
+    background: rgb(8, 100, 120);
 }
 
 .project-card a {
@@ -295,7 +449,7 @@ a:hover, a:focus {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: black;
+    background: radial-gradient(circle, rgb(200, 35, 35) 10%, rgb(10, 133, 158) 100%, rgba(229, 255, 0, 0.1) 10%);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -313,6 +467,42 @@ a:hover, a:focus {
 .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
+}
+
+#tecnologias {
+    padding: 0.5rem 1rem;
+    background-color: #F5F5F5;
+    color: black;
+    text-align: center;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.technologies-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center; /* Center the technologies */
+}
+
+.technology-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 120px;
+    height: auto;
+    text-align: center;
+}
+
+.technology-card img {
+    width: 40px;
+    height: auto;
+    margin-bottom: 0.5rem;
+    filter: grayscale(100%); /* Black and white effect */
+    transition: filter 0.3s ease; /* Smooth transition on hover */
+}
+
+.technology-card img:hover {
+    filter: grayscale(0%); /* Restore color on hover */
 }
 
 #sobre-mi {

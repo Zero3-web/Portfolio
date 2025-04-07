@@ -24,7 +24,7 @@
             <section class="hero">
                 <h1 class="gradient-text">BENJAMIN BURGA</h1>
                 <p>Front end Developer</p>
-                <button class="cta-button">PORTAFOLIO DE PRESENTATION</button>
+                <button class="cta-button">DESCARGAR CV</button>
                 <div class="footer-info">
                     <span id="current-year"></span>
                 </div>
@@ -36,7 +36,7 @@
                 <h2>Acerca de Mí</h2>
                 <div class="about-me">
                     <div class="about-left">
-                        <img src="images/profile-picture.jpg" alt="Foto de perfil" class="profile-picture">
+                        <img src="images/profile.jpeg" alt="Foto de perfil" class="profile-picture">
                         <h3>Benjamin Burga</h3>
                         <button class="about-button">FRONT-END DEVELOPER</button>
                         <button class="about-button">UI/UX DESIGNER</button>
@@ -53,35 +53,84 @@
             <section id="proyectos" class="fade-in">
                 <h2>Mis Proyectos</h2>
                 <div class="projects-container">
-                    <div class="project-card">
+                    <div class="project-card" data-category="web">
+                        <img src="images/screenshots.png" alt="Proyecto 1">
                         <h3>Proyecto 1</h3>
                         <p>Descripción breve del proyecto 1.</p>
-                        <a href="./project.html?id=1" target="_blank">Ver más</a>
+                        <a href="./project.html?id=1" target="_blank" class="view-demo">Ver Demo</a>
+                        <a href="https://github.com/project1" target="_blank" class="github-repo">GitHub</a>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="uiux">
+                        <img src="images/screenshots.png" alt="Proyecto 2">
                         <h3>Proyecto 2</h3>
                         <p>Descripción breve del proyecto 2.</p>
-                        <a href="./project.html?id=2" target="_blank">Ver más</a>
+                        <a href="./project.html?id=2" target="_blank" class="view-demo">Ver Demo</a>
+                        <a href="https://github.com/project2" target="_blank" class="github-repo">GitHub</a>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="web">
+                        <img src="images/screenshots.png" alt="Proyecto 3">
                         <h3>Proyecto 3</h3>
                         <p>Descripción breve del proyecto 3.</p>
-                        <a href="./project.html?id=3" target="_blank">Ver más</a>
+                        <a href="./project.html?id=3" target="_blank" class="view-demo">Ver Demo</a>
+                        <a href="https://github.com/project3" target="_blank" class="github-repo">GitHub</a>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="fullstack">
+                        <img src="images/screenshots.png" alt="Proyecto 4">
                         <h3>Proyecto 4</h3>
                         <p>Descripción breve del proyecto 4.</p>
-                        <a href="./project.html?id=4" target="_blank">Ver más</a>
+                        <a href="./project.html?id=4" target="_blank" class="view-demo">Ver Demo</a>
+                        <a href="https://github.com/project4" target="_blank" class="github-repo">GitHub</a>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="uiux">
+                        <img src="images/screenshots.png" alt="Proyecto 5">
                         <h3>Proyecto 5</h3>
                         <p>Descripción breve del proyecto 5.</p>
-                        <a href="./project.html?id=5" target="_blank">Ver más</a>
+                        <a href="./project.html?id=5" target="_blank" class="view-demo">Ver Demo</a>
+                        <a href="https://github.com/project5" target="_blank" class="github-repo">GitHub</a>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-category="fullstack">
+                        <img src="images/screenshots.png" alt="Proyecto 6">
                         <h3>Proyecto 6</h3>
                         <p>Descripción breve del proyecto 6.</p>
-                        <a href="./project.html?id=6" target="_blank">Ver más</a>
+                        <a href="./project.html?id=6" target="_blank" class="view-demo">Ver Demo</a>
+                        <a href="https://github.com/project6" target="_blank" class="github-repo">GitHub</a>
+                    </div>
+                </div>
+            </section>
+            <section id="tecnologias" class="fade-in">
+                <h2>Tecnologías</h2>
+                <div class="technologies-container">
+                    <div class="technology-card">
+                        <img src="images/html.png" alt="HTML">
+                        <p>HTML</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/css.png" alt="CSS">
+                        <p>CSS</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/js.png" alt="JavaScript">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/database.png" alt="SQL">
+                        <p>SQL</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/git.png" alt="Git">
+                        <p>Git</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/github.png" alt="GitHub">
+                        <p>GitHub</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                        <p>LinkedIn</p>
+                    </div>
+                    <div class="technology-card">
+                        <img src="images/database.png" alt="Database">
+                        <p>Database</p>
                     </div>
                 </div>
             </section>
@@ -100,16 +149,18 @@
         </main>
     </div>
     <div class="announcement">
-        <a href="https://github.com/tuusuario" target="_blank">
+        <a href="https://github.com/zero3-web" target="_blank">
             <img src="images/github-logo.png" alt="GitHub">
         </a>
-        <a href="https://linkedin.com/in/tuusuario" target="_blank">
-            <img src="images/linkedin-logo.png" alt="LinkedIn">
+        <a href="https://linkedin.com/in/benjaminburga" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn">
         </a>
     </div>
     <div id="scroll-to-top" class="scroll-to-top">↑</div>
     <script src="js/scripts.js"></script>
     <script src="./js/effects.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/carousel.js"></script>
     <footer id="footer">
         <div class="footer-container">
             <p>&copy; 2023 Benjamin Burga. Todos los derechos reservados.</p>
